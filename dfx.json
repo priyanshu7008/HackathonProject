@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "crowdfunding-dapp-backend": {
+      "type": "rust",
+      "candid": "src/crowdfunding-dapp-backend/crowdfunding-dapp-backend.did",
+      "wasm": "target/wasm32-unknown-unknown/release/crowdfunding-dapp-backend.wasm",
+      "main": "src/lib.rs",
+      "package": "crowdfunding-dapp-backend"
+    },
+    "crowdfunding-dapp-frontend": {
+      "dependencies": [
+        "crowdfunding-dapp-backend"
+      ],
+      "source": [
+        "src/crowdfunding-dapp-frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "crowdfunding-dapp-frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
